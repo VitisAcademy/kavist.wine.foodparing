@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Основы фудпейринга</title>
+  <link rel="shortcut icon" href="img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/assn.css">
+  <link rel="stylesheet" href="css/sort.css">
+  <link rel="stylesheet" href="css/twins.css">
+  <script src="js/draggabilly.pkgd.min.js"></script>
+  <script src="js/db.js"></script>
+</head>
+<body>
+<div class="ave">
+  <div class="ave__title">Введите email</div>
+  <input type="email" maxlength="40" autocomplete="off" onkeyup="checkValidate(this)" autofocus class="ave__input">
+  <div class="ave__button button" onclick="logIn()">Продолжить</div>
+</div>
+<div class="header">
+  <div class="header__menu" onclick="toggleHamburger()"></div>
+  <div class="header__title">Викторина</div>
+</div>
+<div class="main">
+  <div class="task">
+    <div class="lock hidden"></div>
+    <div class="info">
+      <div class="info__title">Прочтите описание дефекта и определите, о каком из них идёт речь.</div>
+      <div onclick="startInfo(this)" class="info__button button">Понятно!</div>
+    </div>
+    <div class="task__page assn left"></div>
+  </div>
+
+  <div class="task hidden">
+    <div class="lock hidden"></div>
+    <div class="info" style="z-index: 3;">
+      <div class="info__title">Определите, к какому методу относится утверждение и перетащите на соответствующую сторону.</div>
+      <div onclick="startInfo(this);sortMakeAnswer()" class="info__button button">Понятно!</div>
+    </div>
+    <div class="task__page sort left">
+      <div class="sort__wrapper">
+        <div class="sort__zone">Конгруэнтный метод</div>
+        <div class="sort__task"></div>
+        <div class="sort__zone">Контрастный метод</div>
+      </div>
+      <div class="sort__button button" onclick="scoreButton(1)">Нажмите для завершения!</div>
+    </div>
+  </div>
+
+  <div class="task hidden">
+    <div class="lock hidden"></div>
+    <div class="info">
+      <div class="info__title">Придумайте гастропару с вином и впишите его название.</div>
+      <div onclick="startInfo(this)" class="info__button button">Понятно!</div>
+    </div>
+    <div class="task__page twins left"></div>
+  </div>
+
+  <div class="task hidden">
+    <div class="lock hidden"></div>
+    <div class="info">
+      <div class="info__title">Прочитайте внимательно вопрос. Дайте развёрнутый ответ в комментариях к уроку.</div>
+      <div onclick="startInfo(this)" class="info__button button">Понятно!</div>
+    </div>
+    <div class="task__page asked left">
+      <div class="asked__title"></div>
+      <div class=" button" onclick="endButton()">Дать ответ!</div>
+    </div>
+  </div>
+</div>
+<div class="footer"></div>
+<div class="menu menu__off">
+  <div class="menu__content"></div>
+</div>
+<script src="js/main.js"></script>
+<script src="js/assn.js"></script>
+<script src="js/sort.js"></script>
+<script src="js/twins.js"></script>
+</body>
+</html>
